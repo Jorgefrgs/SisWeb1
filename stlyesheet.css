@@ -1,0 +1,265 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #000000;
+    background-color: #51b5ab;
+}
+
+/* Cabeçalho */
+header {
+    background: rgba(0, 0, 0, 0.57);
+    color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.2s;
+}
+
+header nav ul li a:hover {
+    color: #00bcd4;
+    transform: scale(1.1);
+}
+
+/* Estilos do container do carrossel */
+.slideshow {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Radio buttons invisíveis */
+.slideshow input {
+    display: none;
+}
+
+/* Slideshow */
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* Navegação */
+.navigation {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.navigation label {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.navigation label:hover {
+    background-color: #ccc;
+}
+
+/* Controle da exibição dos slides */
+#slide1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+
+/* Sobre */
+#sobre {
+    padding: 2rem;
+    background: linear-gradient(90deg, rgba(80,180,170,1) 12%, rgba(181,217,213,1) 52%, rgba(0,212,255,1) 96%);
+    text-align: center;
+}
+
+#sobre h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Formulário de Contato */
+#contato {
+    background: linear-gradient(90deg, rgba(80,180,170,1) 12%, rgba(181,217,213,1) 52%, rgba(0,212,255,1) 96%);
+    padding: 2rem;
+    text-align: center;
+}
+
+#contato h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+#contato form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contato form input,
+#contato form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#contato form input:focus,
+#contato form textarea:focus {
+    border-color: #51b5ab;
+    box-shadow: 0 0 5px rgba(81, 181, 171, 0.5);
+}
+
+#contato form button {
+    padding: 0.8rem;
+    background: #32a650;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.5s, transform 0.2s;
+}
+
+#contato form button:hover {
+    background: #51b5ab;
+    transform: scale(1.05);
+}
+
+/* Rodapé */
+footer {
+    background: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer .social a {
+    color: #51b5ab;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+footer .social a:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    .slideshow {
+        height: 200px;
+    }
+
+    #sobre h2,
+    #contato h2 {
+        font-size: 1.5rem;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+}
